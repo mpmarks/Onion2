@@ -18,3 +18,4 @@ This will call your 0x01 routine. In that routine your can read the next I2C dat
 3.  You can add up to 15 or so user handlers. 0 is already used by Onion. So you should be able to use addresses 1-15 for your handlers. I kept it small to save memory.
 4.  Because your routines will be called under interrupt don't do anything slow, or use Serial, etc. That will probably crash the Arduino.
 5.  There is very little error handling in the code. Its just an experiment to make the Onion Arduino Dock a bit more useful.
+6.  The Neopixel controlling code in the official Onion library has been removed in my version, so their neopixel example application on Omega wont work. But you can add your own handlers as I've done to play with Arduino peripherals. Of course I2C is tied up with the Dock interface so you can't use that on the Arduino. Unfortunately as far as I know the Arduino can't be both an I2C master and slave at the same time.
